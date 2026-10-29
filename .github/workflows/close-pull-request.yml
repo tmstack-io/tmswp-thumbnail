@@ -1,0 +1,30 @@
+# 同期先の読み取り専用リポジトリ(tmstack-io/tmswp-*)に送られたプルリクエストを閉じ、monorepoへ案内する。
+# このファイルが正本で、split.ymlが同期の前に各パッケージの.github/workflows/close-pull-request.ymlへ写す。
+# monorepoでは動かない(.github/workflows/に置かない)。
+# pull_request_targetで動くが、プルリクエストのコードをcheckoutも実行もしない。権限はpull-requests: writeだけにする。
+name: Close Pull Request
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close:
+    name: Close pull request
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Close the pull request and point to the monorepo
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          COMMENT: |
+            Thank you for your pull request.
+
+            This repository is a read-only split of the TMStack WordPress Framework monorepo. It is updated automatically from the monorepo, so pull requests are not accepted here, and this one has been closed automatically.
+
+            Please open your pull request against the monorepo instead: https://github.com/tmstack-io/tmswp
+        run: gh pr close "${PR_NUMBER}" --comment "${COMMENT}"

@@ -1,0 +1,39 @@
+{
+  "name": "tmswp/thumbnail",
+  "description": "TMStack WordPress Framework - Thumbnail",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.3",
+    "ext-gd": "*",
+    "tmswp/core": "^0.9"
+  },
+  "require-dev": {
+    "tmswp/testing": "^0.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "TMSWP\\Thumbnail\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TMSWP\\Thumbnail\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "0.9.x-dev"
+    }
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "sort-packages": true
+  }
+}

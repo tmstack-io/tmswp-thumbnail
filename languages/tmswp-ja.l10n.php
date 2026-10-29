@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>'tmswp','plural-forms'=>'nplurals=1; plural=0;','language'=>'ja','project-id-version'=>'tmswp-thumbnail','pot-creation-date'=>'2026-10-27T00:00:00+00:00','po-revision-date'=>'2026-10-27T00:00:00+00:00','messages'=>['TMSWP thumbnails cannot be generated because the REST API route %s is not available to visitors. Allow the REST API for this route.'=>'REST APIのルート%sを訪問者が使えないため、TMSWPのサムネイルを生成できません。このルートのREST APIを許可してください。']];

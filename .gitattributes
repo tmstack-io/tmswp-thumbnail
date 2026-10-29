@@ -1,0 +1,6 @@
+# 配布物(splitした読み取り専用リポジトリのzipと、Composerのpathリポジトリの写し)から、開発用のファイルと、同期先でだけ動くワークフロー(.github/。split.ymlが同期の前に置く)を外す
+/.gitattributes export-ignore
+/phpunit.xml.dist export-ignore
+/tests export-ignore
+.DS_Store export-ignore
+/.github export-ignore
