@@ -5,7 +5,7 @@ TMStack WordPress Framework(TMSWP)の拡張パッケージで、署名付きのU
 ## 動作環境
 
 - PHP 8.3〜8.5(`ext-gd`。composer.jsonの`require`)、WordPress 7.0以上
-- tmswp/core `^0.9.1`(composer.jsonの`require`)
+- tmswp/core `^0.10`(composer.jsonの`require`)
 - **REST APIが使えること**。未生成のサムネイルのURLは、RESTのルート`/wp-json/tmswp/v1/thumb`を指します。REST以外の経路はありません。ログインしていない訪問者からこのルートが使えないと(REST APIを無効化するプラグイン等)、未生成のサムネイルは表示されません。thumbnailは管理画面の表示のたびにこれを確かめ、使えなければ`manage_options`の権限のユーザーに通知します。Webサーバーの設定による`/wp-json/`の遮断は検出できません。
 - **uploadsがローカルのファイルシステムにあること**。外部ストレージ(オブジェクトストレージへのオフロード等)には対応しません。キャッシュの書き込みに、同じディレクトリの中の`rename()`と`flock()`を使います。
 - **thumbnailを登録できるKernelは、サイトに1つ**です。テーマとプラグインの両方に登録すると、2つ目のKernelの起動が`LogicException`で止まります。
@@ -73,7 +73,7 @@ wp tmswp thumb status            # 件数・合計サイズ・扱えなかった
 - サムネイルのURLを作る(引数・設定・キャッシュ・WP-CLI・RESTとセキュリティの注意): `vendor/tmswp/thumbnail/rules/thumbnail.md`
 - 拡張の登録の仕方と制約: `vendor/tmswp/core/rules/extensions.md`
 
-設計の正本は、TMSWPのmonorepo([tmstack-io/tmswp](https://github.com/tmstack-io/tmswp))の[docs/08-extensions.md](https://github.com/tmstack-io/tmswp/blob/v0.9.1/docs/08-extensions.md)の「tmswp/thumbnail — 署名付きURLサムネイル」の節です。
+設計の正本は、TMSWPのmonorepo([tmstack-io/tmswp](https://github.com/tmstack-io/tmswp))の[docs/08-extensions.md](https://github.com/tmstack-io/tmswp/blob/v0.10.0/docs/08-extensions.md)の「tmswp/thumbnail — 署名付きURLサムネイル」の節です。
 
 ## ライセンス
 

@@ -175,4 +175,4 @@ wp tmswp thumb status            # サムネイルの件数(files)・合計の�
 - 拡張の登録の仕方と制約: vendor/tmswp/core/rules/extensions.md
 - アイキャッチが無いときの代わりの画像(`tmswp/post/thumbnail_fallback`のフィルタ): vendor/tmswp/core/rules/post-type.md
 - テンプレートパーツ(`Template::part()`)の使い方: vendor/tmswp/core/rules/view.md
-- 設計の正本: TMSWPのmonorepoの[docs/08-extensions.md](https://github.com/tmstack-io/tmswp/blob/v0.9.1/docs/08-extensions.md)の「tmswp/thumbnail — 署名付きURLサムネイル」の節
+- 設計の正本: TMSWPのmonorepoの[docs/08-extensions.md](https://github.com/tmstack-io/tmswp/blob/v0.10.0/docs/08-extensions.md)の「tmswp/thumbnail — 署名付きURLサムネイル」の節

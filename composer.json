@@ -6,10 +6,10 @@
   "require": {
     "php": ">=8.3",
     "ext-gd": "*",
-    "tmswp/core": "^0.9.1"
+    "tmswp/core": "^0.10"
   },
   "require-dev": {
-    "tmswp/testing": "^0.9.1"
+    "tmswp/testing": "^0.10"
   },
   "autoload": {
     "psr-4": {
@@ -29,7 +29,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-main": "0.9.x-dev"
+      "dev-main": "0.10.x-dev"
     }
   },
   "minimum-stability": "stable",
